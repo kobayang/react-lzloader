@@ -14,12 +14,7 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "Lazy load",
-    "Infinite scroll",
-    "Intersection observer",
-    "react"
-  ],
+  "keywords": ["Lazy load", "Infinite scroll", "Intersection observer", "react"],
   "license": "ISC",
   "devDependencies": {
     "typescript": "^2.7.2"
@@ -29,5 +24,8 @@
     "babel-polyfill": "^6.26.0",
     "intersection-observer": "^0.5.0",
     "react": "^16.2.0"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
   }
 }
