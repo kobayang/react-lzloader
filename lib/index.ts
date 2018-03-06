@@ -8,9 +8,13 @@ export interface Props {
   options?: IntersectionObserverInit;
 }
 
-class LzLoader extends React.Component<Props> {
+export interface State {
+  options: IntersectionObserverInit;
+}
+
+class LzLoader extends React.Component<Props, State> {
   private ref?: HTMLElement;
-  private observer: IntersectionObserver;
+  private observer?: IntersectionObserver;
 
   constructor(props: Props) {
     super(props);
@@ -19,14 +23,27 @@ class LzLoader extends React.Component<Props> {
       rootMargin: "0px",
       threshold: 1.0,
     };
+    this.setState({
+      options,
+    });
+  }
+
+  public componentDidMount() {
+    const { options } = this.state;
     this.observer = new IntersectionObserver(this.handleObserver, options);
   }
 
   public componentWillUnmount() {
-    this.observer.disconnect();
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
   public setRef = (ref: HTMLElement | null) => {
+    if (!this.observer) {
+      console.error("Do not set intersection observer");
+      return;
+    }
     if (ref) {
       this.ref = ref;
       this.observer.observe(ref);
@@ -35,7 +52,7 @@ class LzLoader extends React.Component<Props> {
 
   public handleObserver: IntersectionObserverCallback = entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target === this.ref) {
+      if (this.observer && entry.isIntersecting && entry.target === this.ref) {
         this.observer.unobserve(entry.target);
         this.props.callback();
       }
