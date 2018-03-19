@@ -3,7 +3,7 @@ import "babel-polyfill";
 import "intersection-observer";
 
 export interface Props {
-  children: (ref: (ref: HTMLElement) => void) => React.ReactNode;
+  children: (args: (ref: HTMLElement) => void) => React.ReactNode;
   callback: () => void;
   options?: IntersectionObserverInit;
 }
