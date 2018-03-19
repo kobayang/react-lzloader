@@ -1,7 +1,7 @@
 {
   "name": "react-lzloader",
   "version": "0.0.2",
-  "description": "Lazy-Load your components with Intersection Observer",
+  "description": "Lazy-Load your components with Intersection Observer API",
   "author": "kobayang <naokiod@gmail.com>",
   "repository": {
     "type": "git",
@@ -17,15 +17,15 @@
   "keywords": ["Lazy load", "Infinite scroll", "Intersection observer", "react"],
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^2.7.2"
-  },
-  "dependencies": {
     "@types/react": "^16.0.38",
+    "typescript": "^2.7.2",
     "babel-polyfill": "^6.26.0",
-    "intersection-observer": "^0.5.0",
     "react": "^16.2.0"
   },
+  "dependencies": {
+    "intersection-observer": "^0.5.0"
+  },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
+    "react": "^14.0.0 || ^15.0.0 || ^16.0.0"
   }
 }
