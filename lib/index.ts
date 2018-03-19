@@ -21,10 +21,10 @@ class LzLoader extends React.Component<Props, State> {
     const options: IntersectionObserverInit = this.props.options || {
       root: null,
       rootMargin: "0px",
-      threshold: 1.0,
+      threshold: 1.0
     };
     this.setState({
-      options,
+      options
     });
   }
 

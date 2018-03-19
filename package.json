@@ -14,7 +14,12 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["Lazy load", "Infinite scroll", "Intersection observer", "react"],
+  "keywords": [
+    "Lazy load",
+    "Infinite scroll",
+    "Intersection observer",
+    "react"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.0.38",
